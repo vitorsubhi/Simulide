@@ -1,0 +1,50 @@
+/***************************************************************************
+ *   Copyright (C) 2012 by santiago González                               *
+ *   santigoro@gmail.com                                                   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                         *
+ ***************************************************************************/
+
+// Capacitor model using backward euler approximation
+// consists of a current source in parallel with a resistor.
+
+#include "capacitorbase.h"
+#include "simulator.h"
+#include "pin.h"
+
+#include "doubleprop.h"
+#include "intprop.h"
+
+CapacitorBase::CapacitorBase( QObject* parent, QString type, QString id )
+             : Reactive( parent, type, id )
+{
+    m_area = QRectF( -10, -10, 20, 20 );
+
+    m_pin[0]->setLength( 12 );
+    m_pin[1]->setLength( 12 );
+
+    m_value = 0.00001; // Farads
+
+    addPropGroup( { tr("Main"), {
+new DoubProp<CapacitorBase>( "Capacitance", tr("Capacitance")    , "F"    , this, &CapacitorBase::value   , &CapacitorBase::setValue ),
+new DoubProp<CapacitorBase>( "Resistance" , tr("Resistance")      ,"Ω"    , this, &CapacitorBase::resist  , &CapacitorBase::setResist ),
+new DoubProp<CapacitorBase>( "InitVolt"   , tr("Initial Voltage"), "V"    , this, &CapacitorBase::initVolt, &CapacitorBase::setInitVolt ),
+new IntProp <CapacitorBase>( "AutoStep"   , tr("Auto Step")      ,"_Steps", this, &CapacitorBase::autoStep, &CapacitorBase::setAutoStep, "uint" )
+    } } );
+
+    setShowProp("Capacitance");
+    setPropStr( "Capacitance", "10 µF" );
+}
+CapacitorBase::~CapacitorBase(){}
