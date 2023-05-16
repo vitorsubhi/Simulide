@@ -14,5 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+
+
     - name: Install dependencies
-      run: ls -la ../Simulide
+      run: cd build_XX && qmake
+
+    - name: Build
+      run: make
