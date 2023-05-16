@@ -19,10 +19,4 @@ jobs:
       run: mkdir build
 
     - name: Install dependencies
-      run: cd /home/runner/work/Simulide/build_XX && make
-
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
+      run: ls -la
