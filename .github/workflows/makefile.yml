@@ -19,7 +19,7 @@ jobs:
       run: mkdir build
 
     - name: Install dependencies
-      run: make
+      run: cd /home/runner/work/Simulide/build_XX && make
 
     - name: Run check
       run: make check
