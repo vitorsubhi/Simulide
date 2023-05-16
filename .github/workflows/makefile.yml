@@ -15,6 +15,9 @@ jobs:
     - name: Install Qt
       uses: jurplel/install-qt-action@v3
 
+    - name: Create Directory
+      uses: mkdir build
+
     - name: Install dependencies
       run: make
 
