@@ -12,10 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+
     - name: Install dependencies
-      run: make Build_XX
+      run: cd build_XX && make
 
     - name: Run check
       run: make check
