@@ -12,11 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install Qt
-      uses: jurplel/install-qt-action@v3
-
-    - name: Create Directory
-      run: mkdir build
 
     - name: Install dependencies
       run: ls -la
