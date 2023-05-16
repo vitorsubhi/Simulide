@@ -16,7 +16,7 @@ jobs:
       uses: jurplel/install-qt-action@v3
 
     - name: Install dependencies
-      run: cd build_XX && make
+      run: make
 
     - name: Run check
       run: make check
