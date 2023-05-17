@@ -1,22 +1,39 @@
-# SimulIDE 
-
-Electronic Circuit Simulator
-
+# SimulIDE
 
 SimulIDE is a simple real time electronic circuit simulator.
 
+<div align="center">
+  <kbd>
+    <img src="https://1.bp.blogspot.com/-bjgs2MrJVX0/Xtldm9y2WkI/AAAAAAAABSI/hmUEbSFSxCMUaCkw1uWNcS5X7fVKlKtoQCPcBGAYYCw/s1600/slide-2.png" />
+  </kbd>
+</div>
+
+## Description
+
 It's intended for general purpose electronics and microcontroller simulation, supporting PIC, AVR and Arduino.
-
 This is not an accurate simulator for circuit analisis, it aims to be the fast, simple and easy to use, so this means simple and not very accurate electronic models and limited features.
-
 Intended for hobbist or students to learn and experiment with simple circuits.
 
+### Features
 
-SimulIDE also features a code Editor and Debugger.
-Editor/Debugger is still in it's firsts stages of development, with basic functionalities, but it is possible to write, compile and basic debugging with breakpoints, watch registers and global variables.
+- Electronics and Microcontroller simulator;
+- Supports PIC, AVR and Arduino;
+- Code Editor;
+- Debugger.
 
+### Built with
 
-## Building SimulIDE:
+  - G++
+  - Qt5
+
+## Getting started
+
+### Prerequisites
+
+  - G++
+  - Qt5
+
+### Install
 
 Build dependencies:
 
@@ -32,7 +49,8 @@ Build dependencies:
  - Qt5 Script
  - Qt5 qmake
 
- 
+### Configure
+
 Once installed go to build_XX folder, then:
 
 ```
@@ -40,26 +58,12 @@ $ qmake
 $ make
 ```
 
-In folder build_XX/executables/SimulIDE_x.x.x you will find executable and all files needed to run SimulIDE.
+### To-do
 
+- [ ] Still need to do this
+- [ ] ~~Decided not to do this~~
+- [x] Done!
 
+### License
 
-## Running SimulIDE:
-
-Run time dependencies:
-
- - Qt5Core
- - Qt5Gui
- - Qt5Xml
- - Qt5svg
- - Qt5Widgets
- - Qt5Concurrent
- - Qt5 Multimedia
- - Qt5 Multimedia Plugins
- - Qt5 Serialport
- - Qt5 Script
-
-
-No need for installation, place SimulIDE folder wherever you want and run the executable.
-
-
+This project is licensed under the [GNU GPL3.0 License](COPYING).
