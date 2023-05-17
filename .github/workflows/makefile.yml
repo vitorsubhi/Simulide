@@ -13,6 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
 
     - name: Install Qt aditional
       run: sudo apt install -y qtscript5-dev libqt5serialport5-dev libqt5svg5-dev qtmultimedia5-dev 
