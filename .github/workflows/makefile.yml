@@ -1,0 +1,21 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Qt aditional
+      run: sudo apt install -y qtscript5-dev libqt5serialport5-dev libqt5svg5-dev qtmultimedia5-dev 
+
+    - name: Build
+      run: cd build_XX && qmake
