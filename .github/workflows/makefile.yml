@@ -17,6 +17,8 @@ jobs:
     - name: Install Qt
       uses: jurplel/install-qt-action@v3
 
+    - name: Install Qt aditional
+      run: sudo apt install qt5-qmake qt5-default qtscript5-dev
 
     - name: Install dependencies
       run: cd build_XX && qmake
